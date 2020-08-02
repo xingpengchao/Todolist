@@ -1,6 +1,6 @@
-# todolist
+# Todolist
 
-> A Vue.js project
+> 基于Vue的Todolist
 
 ## Build Setup
 
