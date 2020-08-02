@@ -28,13 +28,27 @@
         </ul>
       </div>
     </div>
+    <div class="vuexdemo">
+      <h2>Vuexdemo</h2>
+      <span>
+        <button @click="add">+</button>
+        {{ $store.state.count }}
+        <button @click="min">-</button>
+      </span>
+      <Vuexdemo />
+    </div>
   </div>
 </template>
 
 <script>
+import Vuexdemo from './Vuexdemo'
+
 const name = 'Todolist'
 export default {
   name,
+  components: {
+    Vuexdemo
+  },
   data () {
     return {
       inputValue: '',
@@ -64,6 +78,13 @@ export default {
     },
     handleDel (index) {
       this.list.splice(index, 1)
+    },
+    add () {
+      console.log(this.$store.state)
+      this.$store.commit('increment')
+    },
+    min () {
+      this.$store.commit('decrement')
     }
   }
 }
